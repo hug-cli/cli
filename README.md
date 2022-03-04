@@ -1,2 +1,3 @@
-# cli
-常用前端工程快速生成工具
+# hug-cli
+
+A cli tool for generating frontend project!
