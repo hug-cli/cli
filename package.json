@@ -39,7 +39,9 @@
   },
   "dependencies": {
     "commander": "^9.0.0",
+    "execa": "^6.1.0",
     "kolorist": "^1.5.1",
+    "node-fetch": "^3.2.1",
     "ora": "^6.1.0"
   }
 }
