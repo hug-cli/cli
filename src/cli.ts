@@ -26,6 +26,7 @@ cli.command("commit")
     .description("Add commit for the git project")
     .action(() => {
         // TODO 启动 commit
+
     })
 
 // Handle argv
