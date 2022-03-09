@@ -1,1 +1,1 @@
-export const remoteTemplate = ``
+export const remoteLintRepo = `hug-cli/hug-template-lint`

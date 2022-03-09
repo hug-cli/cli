@@ -1,5 +1,5 @@
 import prompts from "prompts"
-import { HugProjectTemplates } from "../constants"
+import { HugProjectTemplates } from "../utils/constants"
 import { throwHugErrorMsg } from "../utils/message"
 
 export async function runNewProject() {

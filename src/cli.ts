@@ -1,5 +1,8 @@
 import { Command } from "commander"
 import { version } from "../package.json"
+import { runLint } from "./actions/runLint"
+import { runLintAdd } from "./actions/runLintAdd"
+import { runNewCommit } from "./actions/runNewCommit"
 import { runNewProject } from "./actions/runNewProject"
 
 const cli = new Command()
@@ -14,19 +17,28 @@ cli.command("new")
         runNewProject()
     })
 
-// TODO Add lint tool
-cli.command("lint")
+// Add lint tool
+cli.command("lint <action>")
     .description("Add lint tool for project")
-    .action(() => {
-        // TODO 添加lint
+    .action((action: string) => {
+        switch (action) {
+            case "add": {
+                runLintAdd()
+                break
+            }
+
+            default: {
+                runLint()
+                break
+            }
+        }
     })
 
 // Standard commit
 cli.command("commit")
     .description("Add commit for the git project")
     .action(() => {
-        // TODO 启动 commit
-
+        runNewCommit()
     })
 
 // Handle argv

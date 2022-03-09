@@ -1,10 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/degit': ^2.8.3
   '@types/node': ^17.0.21
   '@types/progress-stream': ^2.0.2
   '@types/prompts': ^2.0.14
   commander: ^9.0.0
+  degit: ^2.8.4
   eslint: ^8.10.0
   eslint-plugin-prettier: ^4.0.0
   execa: ^6.1.0
@@ -19,6 +21,7 @@ specifiers:
 
 dependencies:
   commander: 9.0.0
+  degit: 2.8.4
   execa: 6.1.0
   kolorist: 1.5.1
   node-fetch: 3.2.1
@@ -26,6 +29,7 @@ dependencies:
   progress-stream: 2.0.0
 
 devDependencies:
+  '@types/degit': 2.8.3
   '@types/node': 17.0.21
   '@types/progress-stream': 2.0.2
   '@types/prompts': 2.0.14
@@ -89,6 +93,10 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@types/degit/2.8.3:
+    resolution: {integrity: sha512-CL7y71j2zaDmtPLD5Xq5S1Gv2dFoHl0/GBZm6s39Mj/ls28L3NzAOqf7H4H0/2TNVMgMjMVf9CAFYSjmXhi3bw==}
     dev: true
 
   /@types/node/17.0.21:
@@ -337,6 +345,12 @@ packages:
     resolution: {integrity: sha512-s82itHOnYrN0Ib8r+z7laQz3sdE+4FP3d9Q7VLO7U+KRT+CR0GsWuyHxzdAY82I7cXv0G/twrqomTJLOssO5HA==}
     dependencies:
       clone: 1.0.4
+    dev: false
+
+  /degit/2.8.4:
+    resolution: {integrity: sha512-vqYuzmSA5I50J882jd+AbAhQtgK6bdKUJIex1JNfEUPENCgYsxugzKVZlFyMwV4i06MmnV47/Iqi5Io86zf3Ng==}
+    engines: {node: '>=8.0.0'}
+    hasBin: true
     dev: false
 
   /dir-glob/3.0.1:

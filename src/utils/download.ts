@@ -7,6 +7,7 @@ import { throwHugErrorMsg } from "./message"
 
 /**
  * download from remote
+ * @deprecated
  * @param url remote
  * @param savePath local path
  */
