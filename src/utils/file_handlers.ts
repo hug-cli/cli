@@ -41,7 +41,7 @@ export const mergePkgJSON = (fields: Array<string>) => {
         }
     }
 
-    return new_pkg
+    fs.writeFileSync(p, JSON.stringify(new_pkg))
 }
 
 /**
@@ -49,7 +49,32 @@ export const mergePkgJSON = (fields: Array<string>) => {
  */
 export const removeHugJSON = () => {
     const p_hug = path.join(__dirname, "hug.json")
-    if (fs.existsSync(p_hug)) {
-        fs.rmSync(p_hug)
+    emptyDir(p_hug)
+}
+
+/**
+ * Check if dir is empty
+ * @param dir
+ * @returns
+ */
+export const isDirEmpty = (dir: string) => fs.readdirSync(dir).length === 0
+
+/**
+ * Empty the dir
+ * @param dir
+ * @returns
+ */
+export const emptyDir = (dir: string) => {
+    if (!fs.existsSync(dir)) {
+        return
+    }
+    for (const file of fs.readdirSync(dir)) {
+        const abs = path.resolve(dir, file)
+        if (fs.lstatSync(abs).isDirectory()) {
+            emptyDir(abs)
+            fs.rmdirSync(abs)
+        } else {
+            fs.unlinkSync(abs)
+        }
     }
 }

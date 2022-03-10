@@ -1,4 +1,4 @@
-import { deepMerge } from "../src/utils/mergePkgJSON"
+import { deepMerge } from "../src/utils/file_handlers"
 
 test("should deepMerge test be passed!", () => {
     const before = {

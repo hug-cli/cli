@@ -47,7 +47,7 @@ export async function runNewProject(filename: string) {
 
     if (!!remote) {
         console.log(
-            throwHugErrorMsg(`Here are no remote template for ${projTemplate}`)
+            throwHugErrorMsg(`Here are no remote template for ${projTemplate}!`)
         )
         return
     }

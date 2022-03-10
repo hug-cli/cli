@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A cli tool for frontend development!",
   "main": "bin/cli.mjs",
+  "type": "module",
   "bin": {
     "hug": "bin/cli.mjs"
   },
