@@ -5,4 +5,5 @@ export const tsup = defineConfig({
     outDir: "bin",
     clean: true,
     format: ["esm"],
+    external: ["prompts"],
 })
