@@ -15,7 +15,7 @@
     "dev": "tsup --watch",
     "build": "tsup",
     "lint": "eslint --fix --ext src/**/*.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,12 +28,18 @@
   },
   "homepage": "https://github.com/hug-cli/cli#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/degit": "^2.8.3",
+    "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
     "@types/progress-stream": "^2.0.2",
     "@types/prompts": "^2.0.14",
+    "babel-jest": "^27.5.1",
     "eslint": "^8.10.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1",
     "prompts": "^2.4.2",
     "tsup": "^5.11.13",

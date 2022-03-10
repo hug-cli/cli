@@ -14,7 +14,6 @@ export async function runLintAdd() {
     })
 
     if (confirm) {
-        // BUG
         const spinner = ora("Get lint config from remote")
         spinner.start()
         const emiter = degit(remoteLintRepo, {
@@ -28,7 +27,9 @@ export async function runLintAdd() {
         }).catch((e: Error) => {
             spinner.fail(throwHugErrorMsg(e.message))
             console.error(e.message)
+            return
         })
+
         // TODO 下载依赖
     }
 }

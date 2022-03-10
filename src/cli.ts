@@ -10,15 +10,15 @@ const cli = new Command()
 cli.name("hug").version(version)
 
 // Initial a new project
-cli.command("new")
+cli.command("new [filename]")
     .alias("n")
     .description("Initial a new project")
-    .action(() => {
-        runNewProject()
+    .action((filename: string) => {
+        runNewProject(filename.trim())
     })
 
 // Add lint tool
-cli.command("lint <action>")
+cli.command("lint [action]")
     .description("Add lint tool for project")
     .action((action: string) => {
         switch (action) {

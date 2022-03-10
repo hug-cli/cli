@@ -2,17 +2,35 @@ import prompts from "prompts"
 import { HugProjectTemplates } from "../utils/constants"
 import { throwHugErrorMsg } from "../utils/message"
 
-export async function runNewProject() {
-    // 提示填写项目名称
-    const { projName } = await prompts({
-        type: "text",
-        name: "projName",
-        message: "Input the project name:",
-        initial: "hug-template",
-    })
+export async function runNewProject(filename: string) {
+    let name = ""
+    if (!filename) {
+        // 提示填写项目名称
+        const pkgNameRegExp =
+            /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/
+        const { projName } = await prompts({
+            type: "text",
+            name: "projName",
+            message: "Input the project name:",
+            initial: "hug-template",
+            validate: (projName) =>
+                pkgNameRegExp.test(projName) ? true : `Invalid package name!`,
+        })
 
-    // 特殊字符替换
-    const name = (<string>projName).replace(/([\!-\/|\:-\?]+)/g, "-")
+        name = projName
+            .trim()
+            .toLowerCase()
+            .replace(/s+/g, "-")
+            .replace(/^[._]/, "")
+            .replace(/[^a-z0-9\~]/, "-")
+    } else {
+        name = filename
+            .trim()
+            .toLowerCase()
+            .replace(/s+/g, "-")
+            .replace(/^[._]/, "")
+            .replace(/[^a-z0-9\~]/, "-")
+    }
 
     // 提示选择项目模板
     const { projTemplate } = await prompts({
